@@ -1,5 +1,14 @@
 ;; general editting settings
 
+(defvar my-packages '(
+                      hide-lines
+                      )
+  "A list of packages to ensure are installed at launch.")
+
+(dolist (p my-packages)
+  (when (not (package-installed-p p))
+    (package-install p)))
+
 ;; abbreviation
 (defalias 'yes-or-no-p 'y-or-n-p)
 

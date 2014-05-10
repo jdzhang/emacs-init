@@ -5,10 +5,10 @@
                       ;starter-kit-js
                       python-mode
                       magit
-                      jedi
-                      autopair
-                      yasnippet
-                      auto-complete
+                      ; jedi
+                      ; autopair
+                      ; yasnippet
+                      ; auto-complete
                       find-file-in-repository
                       ;fuzzy
                       )
@@ -19,33 +19,33 @@
     (package-install p)))
 
 (require 'magit)
-(require 'auto-complete)
-(require 'autopair)
-(require 'flymake)
-(require 'yasnippet)
+; (require 'auto-complete)
+; (require 'autopair)
+;;(require 'flymake)
+; (require 'yasnippet)
 
 ;; (global-set-key [f7] 'find-file-in-repository)
 
 ;; auto-complete mode extra settings
-(setq
- ac-auto-start 2
- ac-override-local-map nil
- ac-use-menu-map t
- ac-candidate-limit 20)
+; (setq
+;  ac-auto-start 2
+;  ac-override-local-map nil
+;  ac-use-menu-map t
+;  ac-candidate-limit 20)
 
 ;; -----------
 ;; Python-mode
 (setq py-electric-colon-active t)       ;need to set per buffer
 (require 'python-mode)
 (add-to-list 'auto-mode-alist '("\\.py$" . python-mode))
-(add-hook 'python-mode-hook 'autopair-mode)
-(add-hook 'python-mode-hook 'yas-minor-mode)
+; (add-hook 'python-mode-hook 'autopair-mode)
+; (add-hook 'python-mode-hook 'yas-minor-mode)
 
 ;; -- auto complete
 ;; jedi setting
 ;; 1/1/14 - jedi server was raising errors on mac, will investigate later
 ;; need to do "pip install jedi epc"
-(require 'jedi)
+; (require 'jedi)
 ;; if changing python interpreter, need line like the following:
 ;; (setq jedi:server-args
 ;;       '("--sys-path"
@@ -57,14 +57,14 @@
 ;;      '("/opt/local/Library/Frameworks/Python.framework/Versions/3.3/bin/python3.3"
 ;;        "/Users/jzhang/.emacs.d/elpa/jedi-0.1.2/jediepcserver.py"
 ;;        ))
-(add-hook 'python-mode-hook
-          (lambda()
-            (jedi:setup)
-            (jedi:ac-setup)
-            (local-set-key "\C-cd" 'jedi:show-doc)
-            (local-set-key (kbd "M-SPC") 'jedi:complete)
-            (local-set-key (kbd "M-.") 'jedi:goto-definition)
-            ))
+;; (add-hook 'python-mode-hook
+;;           (lambda()
+;;             (jedi:setup)
+;;             (jedi:ac-setup)
+;;             (local-set-key "\C-cd" 'jedi:show-doc)
+;;             (local-set-key (kbd "M-SPC") 'jedi:complete)
+;;             (local-set-key (kbd "M-.") 'jedi:goto-definition)
+;;             ))
 
 ;; ;; autocomplete
 ;; (require 'auto-complete-config)

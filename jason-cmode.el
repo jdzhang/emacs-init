@@ -2,6 +2,15 @@
 ;;; Stuff for C/C++ mode
 ;;;---------------------------------------------------------------------
 
+(defvar cmode-packages '(
+                      magit
+                      )
+  "A list of packages to ensure are installed at launch.")
+
+(dolist (p cmode-packages)
+  (when (not (package-installed-p p))
+    (package-install p)))
+
 ;; use spaces in stead of tabs, overwrite it in customer style like
 ;; kernel as needed
 ;;(setq indent-tabs-mode nil)
@@ -36,10 +45,11 @@
         (statement-cont          . c-lineup-math)))))
 
 (add-hook* 'c-mode-common-hook
-  (c-add-style "me-c" my-c-style)
-  (c-add-style "me-kernel" my-kernel-style)
   (define-key c-mode-base-map "\C-m" 'c-context-line-break)
   )
+
+(c-add-style "me-c" my-c-style)
+(c-add-style "me-kernel" my-kernel-style)
 
 (defun guess-a-style ()
       (if (and buffer-file-name

@@ -1,6 +1,6 @@
 ;; experimenting init.el, starting with python stuff
 ;;
-(defvar my-packages '(;starter-kit
+(defvar python-packages '(;starter-kit
                       ;starter-kit-bindings
                       ;starter-kit-js
                       python-mode
@@ -14,7 +14,7 @@
                       )
   "A list of packages to ensure are installed at launch.")
 
-(dolist (p my-packages)
+(dolist (p python-packages)
   (when (not (package-installed-p p))
     (package-install p)))
 

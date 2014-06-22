@@ -9,6 +9,16 @@
   (when (not (package-installed-p p))
     (package-install p)))
 
+(defvar my-vc-packages '(
+			 magit
+			 psvn
+			 )
+  "A list of packages to ensure are installed at launch.")
+
+(dolist (p my-vc-packages)
+  (when (not (package-installed-p p))
+    (package-install p)))
+
 ;; svn
 (require 'psvn)
 

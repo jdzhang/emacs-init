@@ -5,6 +5,7 @@
 (load "jason-versioncontrol")
 (load "jason-cmode")
 (load "jason-python")
+(load "jason-xml")
 (load "jason-cscope")
 ;;(load "startup")
 

@@ -24,6 +24,7 @@
 
 ;; magit
 (require 'magit)
+(require 'rebase-mode)
 (global-set-key "\C-xg" 'magit-status)
 
 

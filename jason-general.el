@@ -2,6 +2,7 @@
 
 (defvar general-packages '(
                       hide-lines
+		      color-theme
                       )
   "A list of packages to ensure are installed at launch.")
 

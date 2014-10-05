@@ -14,7 +14,9 @@
 
 ;; magit
 (require 'magit)
-(require 'rebase-mode)
+(if (>= emacs-major-version 24)
+    (require 'git-rebase-mode)
+    (require 'rebase-mode))
 (global-set-key "\C-xg" 'magit-status)
 
 

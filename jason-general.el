@@ -53,6 +53,9 @@
 (require 'hide-lines)
 (global-set-key (kbd "C-c /") 'hide-lines)
 
+;; split windows horizontally by default
+(setq split-width-threshold 1000)
+
 ;; load log files in text-mode
 ;; this reduces the chance of emacs hogging cpu
 (setq auto-mode-alist

@@ -1,6 +1,7 @@
 ;; version control
 (defvar my-vc-packages '(
 			 magit
+			 magit-svn
 			 psvn
 			 )
   "A list of packages to ensure are installed at launch.")
@@ -17,6 +18,10 @@
 (if (>= emacs-major-version 24)
     (require 'git-rebase-mode)
     (require 'rebase-mode))
+(add-hook 'magit-mode-hook (lambda()
+                             (require 'magit-svn)
+                             (if (magit-svn-get-ref-info)
+                                 (magit-svn-mode))))
 (global-set-key "\C-xg" 'magit-status)
 
 

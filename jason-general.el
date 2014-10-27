@@ -168,3 +168,17 @@
 ;; desktop save mode
 (desktop-save-mode 1)
 
+;; =========================================================================
+(custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(column-number-mode t)
+ '(grep-find-command "find . -type f -not -name \"*svn-base\" -and -not -name \"*.tmp\" -print0 | xargs -0 -e grep -n -I -s -F ")
+ '(indent-tabs-mode nil)
+ '(make-backup-files nil)
+ '(menu-bar-mode nil)
+ '(show-paren-mode t nil (paren))
+ '(show-trailing-whitespace t))
+

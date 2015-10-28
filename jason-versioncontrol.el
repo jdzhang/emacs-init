@@ -16,8 +16,9 @@
 ;; magit
 (require 'magit)
 (if (>= emacs-major-version 24)
-    (require 'git-rebase-mode)
-    (require 'rebase-mode))
+    (require 'git-rebase)
+    (require 'rebase-mode)
+  )
 (add-hook 'magit-mode-hook (lambda()
                              (require 'magit-svn)
                              (if (magit-svn-get-ref-info)

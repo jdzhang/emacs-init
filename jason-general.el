@@ -175,6 +175,10 @@
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
  '(column-number-mode t)
+ ;; split window vertically
+ '(split-height-threshold 0)
+ '(split-width-threshold nil)
+ ;; find & grep
  '(grep-find-command "find . -type f -not -name \"*svn-base\" -and -not -name \"*.tmp\" -print0 | xargs -0 -e grep -n -I -s -F ")
  '(indent-tabs-mode nil)
  '(make-backup-files nil)

@@ -1,4 +1,4 @@
-(add-to-list 'load-path "~/.emacs.d")
+(add-to-list 'load-path "~/.emacs.d/lisp")
 (load "jason-packages")
 (load "jason-general")
 (load "jason-versioncontrol")

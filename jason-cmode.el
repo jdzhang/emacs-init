@@ -59,7 +59,7 @@
         ))
 
 (add-hook 'c-mode-hook 'guess-a-style)
-(setq c-default-style '(;(jave-mode . "java")
+(setq c-default-style '((jave-mode . "java")
                         (other . "me-c")
                         ))
 
